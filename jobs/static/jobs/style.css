@@ -1,0 +1,78 @@
+body{
+    background-color:#008080;
+}
+
+
+.head {
+    display: block;
+    width:200px;
+    padding:2px;
+    background:#DAF7A6;
+    font-size:20px;
+    text-align:center;
+    margin-top:30px;
+    border: 2px dashed Black;
+}
+
+.input {
+    background: #F1D90F;
+    margin-top: 10px;
+    display: block;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.Date-Do{
+    background: #f2f2f2;
+    height:90px;
+    padding:15px 20px 0px 20;
+    border-radius:10px;
+}
+
+.input_1{
+  width: 40%;
+  padding: 10px;
+  margin: 5px 0 22px 50;
+  background: #f1f1f1;
+  border-radius:10px;
+}
+
+.Tasks {
+    display: block;
+    margin-left: 200px;
+    margin-right: 200px;
+    background: #FBFCFC;
+    border-radius:20px;
+
+}
+
+.Tasks{
+  background: #f2f2f2;
+    margin:0px;
+    padding:0px;
+
+}
+
+.Task_list {
+    margin:5px;
+    padding:10px;
+}
+
+
+
+.ls1{
+    border: 1px solid black;
+    margin:5px;
+    padding:10px;
+
+}
+
+.ls2{
+    float:left;
+    width:85%
+   }
+
+.ls3{
+    margin:2px;
+    }
+

@@ -1,0 +1,77 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'jobs\style.css' %}">
+    <title>ToDo-Application</title>
+
+    <style>
+.BB{
+        background:#F1D90F;border-radius:10px;padding:10px;
+}
+</style>
+
+</head>
+<body>
+<div>
+<div id="One" class="head" style="margin-left:920px;display:block;block;inline;">
+    Schedule {{Date}}
+</div>
+    <div style="margin-top:10px;margin-left:750px;">
+    <a href="{% url 'Delete_all' %}">
+        <button class="BB" type="button">Delete All</button>
+    </a>
+    <a href="{% url 'Delete_Completed' %}">
+        <button class="BB" type="button">Delete All Completed</button>
+    </a>
+    <a href="{% url 'Delete_incomplete' %}">
+        <button class="BB" type="button">Delete All InComplete</button>
+    </a>
+    </div>
+</div>
+<div class="main">
+    <div class="input-Date-Do">
+    <form method="POST" action="{% url 'add' %}" role="form">
+    <div style="width:40%;height:150px;padding:2px;" class="input">
+        <h1 style="margin:0px 10px">Add Work</h1>
+        {% csrf_token %}
+            <div style="width:auto;" class="input_2">
+                Task {{form.text}}<br/>
+                Date {{form.Date}}
+                <button style="padding:10px;border-radius:10px;" type="submit" class="button">Add</button>
+            </div>
+    </div>
+    </form>
+
+    </div>
+
+    <div class="Tasks">
+
+    <ol class="Task_list">
+            {% for i in All_items %}
+        {% if i.completed %}
+            <li class="ls1">
+
+                <span class="ls2">&#10004; {{i.text}} &#9; {{ i.Date }}  </span>
+
+                    <a href="{% url 'Not_Completed' i.id %}"><span style="font-size:10px;">Mark NOT_Completed &#10005;</span></a>
+            </li>
+        {% else %}
+        <li class="ls1">
+
+            <span class="ls2">&#10005; {{i.text}} {{ i.Date }}  </span>
+
+            <a href="{% url 'Completed' i.id %}"><span style="font-size:13px;">Mark Completed &#10004;</span></a>
+        {% endif %}
+
+            {% endfor %}
+    </ol>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
